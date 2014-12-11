@@ -1,6 +1,6 @@
 # Using SVG icons the smart way
 
-why we should use inline svg for icons
+##why we should use inline svg for icons
 ------------------------------
 1. pro: you can control with css (http://css-tricks.com/using-svg/)
 2. pro: reduce http requests to a single spritesheet
@@ -14,7 +14,7 @@ why we should use inline svg for icons
 10. con: doesn't work with IE unless you use a polyfill like svg4everybody (https://github.com/jonathantneal/svg4everybody)
 
 
-adding a new icon to the project: 
+##adding a new icon to the project: 
 ----------
 1. add new .svg to /icon folder (always keep a pristine version in the project)
 2. open new icon .svg in text editor, COPY the main shape (path d="..." - ignore empty paths)
@@ -33,7 +33,7 @@ adding a new icon to the project:
 9. of all the ways to use svg this one makes the most sense because it removes a lot of the complexity and works around some of it's quirks of using svg for this purpose
 10. summary: all icons are in a single svg file which limits http requests to one. we retain the ability to cache the spritesheet, and gain the ability the style with external css at the same time. 
 
-additional notes and guidelines
+##additional notes and guidelines
 -------------------------------
 * https://github.com/jonathantneal/svg4everybody is a polyfill for using inline SVG in ie8-11.
 * source icons come from http://icomoon.io or https://github.com/google/material-design-icons
