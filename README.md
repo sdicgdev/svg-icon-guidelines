@@ -16,9 +16,8 @@ The secret is inline <svg> directly in the HTML, with an "icon-xxxxx" class for 
 Our goal here is to put all of our icons in a single spritemap in order to reduce http requests to one for our apps and websites. In some cases we may want to make several spritemaps but in any case the benefits remain. Whereas with icon fonts and PNG fallback methods, we serve and maintain possibly hundreds of asset files, with this method we serve a single maintainable, and easily cacheable XML file.
 
 ##But What about Internet Explorer, You Say?
-
 Well supposedly Internet Explorer now supports inline SVG...but you'll be shocked to learn that it doesn't support every method. That said, in most cases, for modern browsers there is no need to even provide PNG fallback images. We can use a tiny javascript polyfill called **svg4everybody.js** that adds support for inline SVG with <use> tags. Soon, even that won't be necessary. 
----------------------------------------------------------------
+
 ##Pros
 1. You can control style with external CSS (http://css-tricks.com/using-svg/)
 2. Reduce http requests
@@ -32,17 +31,16 @@ Well supposedly Internet Explorer now supports inline SVG...but you'll be shocke
 1. Really old browsers we don't care about can't see them.
 2. There may be caching issues on untested platforms like desktop safari. we will fix these issues.
 3.Can't use font-related css attributes (this is also kind of a pro, but i needed more cons)
-------------------------------------------------
+
 ##TL;DR
 
 This process will greatly reduce http requests and eliminate font-rendering quirks. It also cleans up our project by eliminating redundant files, and ultimately streamlines our icon workflow. Now any dev can copy an SVG icon path into the spritemap and start using it immediately with full CSS support! 
----------------------------
+
 #The Workflow
 
 This is intended to be a quick and dirty guide to adding a single icon to your project. Hit me up on chat or email if you have any questions or to complain about my awful documentation skills.
 
 ##Adding a New Icon to the Project: 
-----------
 1. Add new .svg to **assets/icons** folder (**ALWAYS** keep a pristine version in the project)
 2. open new icon .svg in text editor and COPY the main shape (path d="..." - ignore empty paths)
 3. Open 'pg-spritemap.svg' file in text editor 
@@ -57,9 +55,8 @@ This is intended to be a quick and dirty guide to adding a single icon to your p
 
 7. The id is only for selecting the icon from the svg spritesheet with the <use> tag in the HTML
 8. The "icon-IDNAME" class is for applying custom styling to a specific icon
-----------------------
-##Notes
 
+##Notes
 * https://github.com/jonathantneal/svg4everybody is a polyfill for using inline SVG in ie8-11.
 * source icons come from http://icomoon.io or https://github.com/google/material-design-icons
 * 48x48 default size, but can be any size
@@ -70,7 +67,9 @@ This is intended to be a quick and dirty guide to adding a single icon to your p
 *To change an icon's color use "fill" instead of "color"
 *Use "stroke: " to outline the whole symbol.
 
-todo:
+
+----------------------
+##todo:
 add sample index.html
 add sample icons 
 add sample css
