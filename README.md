@@ -1,6 +1,6 @@
 # Using SVG icons the smart way
 
-The #1 reason we should switch to SVG icons is we can avoid any quirks of how browsers render fonts differently without having to apply a bunch of hacky anti-aliasing quirks and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay!
+The #1 reason we should switch to SVG icons is so we can avoid any browser-specific font-rendering issues without having to apply a bunch of hacky anti-aliasing and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay!
 
 ##Not your Fathers' SVG
 If you're unaware already, SVG is a vector graphic format that supports multiple colors, gradients and can be styled through a bunch of CSS properties and SVG filter effects. With modern techniques you can make them do anything. You can stack them to make more complex icons and artwork. They can also be animated and controlled through javascript. But before you get too excited, all these powers can be yours if you read the primer below and follow some simple directions.
