@@ -1,5 +1,6 @@
-# Using SVG icons the smart way
+*this is a work in progress*
 
+# Using SVG Icons the Smart Way
 The #1 reason we should switch to SVG icons is so we can avoid any browser-specific font-rendering issues without having to apply a bunch of hacky anti-aliasing and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay!
 
 ##Not your Fathers' SVG
@@ -15,12 +16,11 @@ The secret is inline <svg> directly in the HTML, with an "icon-xxxxx" class for 
 Our goal here is to put all of our icons in a single spritemap in order to reduce http requests to one for our apps and websites. In some cases we may want to make several spritemaps but in any case the benefits remain. Whereas with icon fonts and PNG fallback methods, we serve and maintain possibly hundreds of asset files, with this method we serve a single maintainable, and easily cacheable XML file.
 
 ##But what about Internet Explorer support, you say? 
-Well IE supposedly supports inline SVG...but you'll be shocked to learn that it doesn't support every method. That said, in most cases, for modern browsers there is no need to even provide PNG fallback images. We can use a tiny javascript polyfill called **svg4everybody.js** that adds support for inline SVG with <use> tags. Soon, even that won't be necessary. All of this greatly reduces our http requests, cleans up our project by eliminating redundant files, and ultimately streamlines our icon workflow. Now anybody can copy an SVG icon path into the spritemap and start using it immediately with full CSS support! 
-
+Well IE supposedly supports inline SVG...but you'll be shocked to learn that it doesn't support every method. That said, in most cases, for modern browsers there is no need to even provide PNG fallback images. We can use a tiny javascript polyfill called **svg4everybody.js** that adds support for inline SVG with <use> tags. Soon, even that won't be necessary. 
+---------------------------------------------------------------
 ##Pros
-------------------------------
-1. You can control with CSS (http://css-tricks.com/using-svg/)
-2. Reduce http requests to a single spritemap
+1. You can control style with external CSS (http://css-tricks.com/using-svg/)
+2. Reduce http requests
 3. Don't have to maintain and serve multiple font files for specific browsers
 4. Any dev can easily add a new icon to the project at any time
 5. Fewer files to maintain and no need to deal with .png fallback resources that just bloat the project
@@ -31,6 +31,12 @@ Well IE supposedly supports inline SVG...but you'll be shocked to learn that it 
 1. Really old browsers we don't care about can't see them.
 2. There may be caching issues on untested platforms like desktop safari. we will fix these issues.
 3.Can't use font-related css attributes (this is also kind of a pro, but i needed more cons)
+------------------------------------------------
+#TL;DR
+This process will greatly reduce http requests and eliminate font-rendering quirks. It also cleans up our project by eliminating redundant files, and ultimately streamlines our icon workflow. Now any dev can copy an SVG icon path into the spritemap and start using it immediately with full CSS support! 
+---------------------------
+#The Workflow
+This is intended to be a quick and dirty guide to adding a single icon to your project. Hit me up on chat or email if you have any questions or to complain about my awful documentation skills.
 
 ##adding a new icon to the project: 
 ----------
@@ -60,3 +66,8 @@ Well IE supposedly supports inline SVG...but you'll be shocked to learn that it 
 * each icon is summoned with an <svg> tag containing a <use> tag that points to the id of the desired icon
 * "icon-xxxxx" classes are for styling individual icons. they live in sass/_pg-icons.scss, and must be included on the <svg> tag or they won't work.
 * SVG has special css attributes and behavior. to change an icon's color use "fill" instead of "color"
+
+todo:
+add sample index.html
+add sample icons 
+add sample css
