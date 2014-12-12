@@ -16,7 +16,9 @@ The secret is inline <svg> directly in the HTML, with an "icon-xxxxx" class for 
 Our goal here is to put all of our icons in a single spritemap in order to reduce http requests to one for our apps and websites. In some cases we may want to make several spritemaps but in any case the benefits remain. Whereas with icon fonts and PNG fallback methods, we serve and maintain possibly hundreds of asset files, with this method we serve a single maintainable, and easily cacheable XML file.
 
 ##But What about Internet Explorer, You Say?
+
 Well supposedly Internet Explorer now supports inline SVG...but you'll be shocked to learn that it doesn't support every method. That said, in most cases, for modern browsers there is no need to even provide PNG fallback images. We can use a tiny javascript polyfill called **svg4everybody.js** that adds support for inline SVG with <use> tags. Soon, even that won't be necessary. 
+
 ---------------------------------------------------------------
 ##Pros
 1. You can control style with external CSS (http://css-tricks.com/using-svg/)
