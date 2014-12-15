@@ -69,8 +69,3 @@ This is intended to be a quick and dirty guide to adding a single icon to your p
 * SVG has special CSS attributes, filters and behaviors. 
 *To change an icon's color use "fill" instead of "color"
 *Use "stroke: " to outline the whole symbol.
-----------------------
-##todo:
-* add sample index.html
-* add sample icons 
-* add sample css
