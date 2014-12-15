@@ -49,7 +49,7 @@ This is intended to be a quick and dirty guide to adding a single icon to your p
 6. paste this block in the html where you want to use the icon:
 
   <svg class="icon-IDNAME"> 
-    <use xlink:href="assets/icons/pg-icons.svg#IDNAME"></use>
+    <use xlink:href="assets/icons/spritemap.svg#IDNAME"></use>
   </svg>
   (where 'IDNAME' matches the unique id of each symbol)
 
@@ -60,16 +60,14 @@ This is intended to be a quick and dirty guide to adding a single icon to your p
 * https://github.com/jonathantneal/svg4everybody is a polyfill for using inline SVG in ie8-11.
 * source icons come from http://icomoon.io or https://github.com/google/material-design-icons
 * 48x48 default size, but can be any size
-* each icon is contained in a <symbol> tag, which together make up the spritesheet (pg-icons.svg)
+* each icon is contained in a <symbol> tag, which together make up the spritemap
 * each icon is summoned with an <svg> tag containing a <use> tag that points to the id of the desired icon
 * "icon-xxxxx" classes are for styling individual icons. they live in sass/_pg-icons.scss, and must be included on the <svg> tag or they won't work.
 * SVG has special CSS attributes, filters and behaviors. 
 *To change an icon's color use "fill" instead of "color"
 *Use "stroke: " to outline the whole symbol.
-
-
 ----------------------
 ##todo:
-add sample index.html
-add sample icons 
-add sample css
+* add sample index.html
+* add sample icons 
+* add sample css
