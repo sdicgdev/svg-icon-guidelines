@@ -15,6 +15,9 @@ The secret is inline <svg> directly in the HTML, with an "icon-xxxxx" class for 
 ##Efficiency
 Our goal here is to put all of our icons in a single spritemap in order to reduce http requests to one for our apps and websites. In some cases we may want to make several spritemaps but in any case the benefits remain. Whereas with icon fonts and PNG fallback methods, we serve and maintain possibly hundreds of asset files, with this method we serve a single maintainable, and easily cacheable XML file.
 
+##Compatibility
+These techniques outlined in this document have been tested and verified working on the good browsers (Firefox 33, Chrome 39 - including Android, iOS 8 Safari, and latest desktop Safari). There are a couple minor tweaks to get 100% compatibility and those are noted in the source. Everything else just worked in my tests. Let me know if you run into any rendering issues.
+
 ##But What about Internet Explorer, You Say?
 Well supposedly Internet Explorer now supports inline SVG...but you'll be shocked to learn that it doesn't support every method. That said, in most cases, for modern browsers there is no need to even provide PNG fallback images. We can use a tiny javascript polyfill called **svg4everybody.js** that adds support for inline SVG with <use> tags. Soon, even that won't be necessary. 
 
@@ -33,8 +36,7 @@ Well supposedly Internet Explorer now supports inline SVG...but you'll be shocke
 3. Can't use font-related css attributes (this is also kind of a pro, but i needed more cons)
 
 ##TL;DR
-
-This process will greatly reduce http requests and eliminate font-rendering quirks. It also cleans up our project by eliminating redundant files, and ultimately streamlines our icon workflow. Now any dev can copy an SVG icon path into the spritemap and start using it immediately with full CSS support! 
+Using SVGs as outlined here will greatly reduce http requests and eliminate font-rendering quirks. It also keeps our project clean by eliminating redundant files, and ultimately streamlines our workflow. Now any dev can copy an SVG icon path into the spritemap and start using it immediately with full CSS support! 
 
 #The Workflow
 
