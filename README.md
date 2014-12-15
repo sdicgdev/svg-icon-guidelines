@@ -38,7 +38,7 @@ This process will greatly reduce http requests and eliminate font-rendering quir
 
 #The Workflow
 
-This is intended to be a quick and dirty guide to adding a single icon to your project. Hit me up on chat or email if you have any questions or to complain about my awful documentation skills.
+This is intended to be a quick and dirty guide to adding a single icon to your project. Basically you copy an icon to the project, copy its path into the spritemap, then place a correctly formatted block of text in the markup. Hit me up on chat or email if you have any questions or to complain about my awful documentation skills. :)
 
 ##Adding a New Icon to the Project: 
 1. Add new .svg to **assets/icons** folder (**ALWAYS** keep a pristine version in the project)
@@ -51,7 +51,8 @@ This is intended to be a quick and dirty guide to adding a single icon to your p
   <svg class="icon-IDNAME"> 
     <use xlink:href="assets/icons/spritemap.svg#IDNAME"></use>
   </svg>
-  (where 'IDNAME' matches the unique id of each symbol)
+ 
+ (where 'IDNAME' matches the unique id of each symbol)
 
 7. The id is only for selecting the icon from the svg spritesheet with the <use> tag in the HTML
 8. The "icon-IDNAME" class is for applying custom styling to a specific icon
