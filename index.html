@@ -39,7 +39,10 @@
       padding: 0 !important;
       margin: 0 !important;
     }
-
+    [class*="icon-"] {
+      height: 100%;
+      width: 100%;
+     }
     .icon-bug-report {
       fill: black;
     }
@@ -87,12 +90,13 @@
 
     <div class="playground">
       <h2>Playground</h2>
-      <p>Try to add a couple of new icons to this box. After you have successfully added some icons, try to change their size and color. How would you add a 1px stroke to an icon?</p>
+      <p>Try to add a couple of new icons to this box. After you have successfully added some icons, try to change their size and color. How would you add a 1px stroke?</p>
       
       <!-- change the class and id to the icon you want -->
       <svg class="icon-XXXXXXXXX">
         <use xlink:href="assets/icons/spritemap.svg#XXXXXXXXXX"></use>
-      </svg> 
+      </svg>
+      
     </div>
   </div>
   
