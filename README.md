@@ -30,7 +30,7 @@ Well supposedly Internet Explorer now supports inline SVG...but you'll be shocke
 ##Cons
 1. Really old browsers we don't care about can't see them.
 2. There may be caching issues on untested platforms like desktop safari. we will fix these issues.
-3.Can't use font-related css attributes (this is also kind of a pro, but i needed more cons)
+3. Can't use font-related css attributes (this is also kind of a pro, but i needed more cons)
 
 ##TL;DR
 
