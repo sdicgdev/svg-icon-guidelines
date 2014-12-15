@@ -67,5 +67,5 @@ This is intended to be a quick and dirty guide to adding a single icon to your p
 * each icon is summoned with an <svg> tag containing a <use> tag that points to the id of the desired icon
 * "icon-xxxxx" classes are for styling individual icons. they live in sass/_pg-icons.scss, and must be included on the <svg> tag or they won't work.
 * SVG has special CSS attributes, filters and behaviors. 
-*To change an icon's color use "fill" instead of "color"
-*Use "stroke: " to outline the whole symbol.
+* To change an icon's color use "fill" instead of "color"
+* Use "stroke: " to outline the whole symbol.
