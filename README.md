@@ -1,19 +1,19 @@
 *this is a work in progress*
 
 # Making the Switch to SVG
-The writing has been on the wall for a couple of years by now: SVG is taking over the web. The SVG format solves a lot of problems, but does require learning some new techniques. The #1 reason we should switch to SVG icons is so we can avoid any browser-specific font-rendering issues without having to apply a bunch of hacky anti-aliasing and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay! The biggest stumbling block has always been spotty support in browsers (mostly IE), but those days are almost behind us.
+The writing has been on the wall for a couple of years by now: SVG is taking over the web. The SVG format solves a lot of problems, but does require learning some new techniques. The biggest stumbling block has always been spotty support in browsers, but those days are almost behind us. The #1 reason we should switch to SVG icons is to avoid browser-specific font-rendering issues without having to apply a bunch of hacky anti-aliasing and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay! 
 
 ##Not your Fathers' SVG
-For the uninitiated, SVG is a vector graphic format that supports multiple colors, gradients and can be styled through a bunch of CSS properties and SVG filter effects. The format has been around for decades but has only recently seen widespread support. With modern techniques you can make them do anything. You can stack them to make more complex icons and artwork. They can also be animated and controlled through javascript. But before you get too excited, all these powers can be yours...IF you read the primer below AND follow some simple directions.
+For the uninitiated, SVG is a vector graphic format that supports multiple colors, gradients and can be styled through a bunch of CSS properties and SVG filter effects. The format has been around since 1999, but has only recently seen widespread support in browsers and authoring applications. With modern techniques you can make SVGs do anything. You can stack them to make more complex icons and artwork. They can also be animated and controlled through javascript. But before you get too excited, all these powers can be yours...IF you read the primer below AND follow some simple directions.
 
 ##Using SVG Icons the Smart Way &trade;
-There are several established and popular methods for using SVG icons, however they all have shortcomings that need to be addressed if we want to use them. They usually involve generating .PNG fallback files and other methods intended to patch-in support for ancient browsers. While this can all be automated, it can unnecessarily bloat the project. Truth be told, there is a lot of old and conflicting information out there on the interwebs about the best way to use SVG icons. I have sifted through all the muck and absorbed as much relevant SVG knowledge as possible. After a mighty quest, I have returned with a new spell! 
+There are several established and popular methods for implementing SVG icons, however they all have shortcomings that need to be addressed if we want to use them. Usually it involves generating PNG fallback files and other methods intended to patch-in support for less-capable browsers. While this can all be automated, it can unnecessarily bloat the project and is increasingly unnecessary if you are targeting modern evergreen browsers like we are with Pinwheel&trade; and our Foundation 5 templates for SDI Camps and Races. Truth be told, there is a lot of old and conflicting information out there on the interwebs about the best way to use SVG icons. I have sifted through all the muck and absorbed as much relevant SVG knowledge as possible.
 
-##So many methods, which one is the best?
-There are at least six ways to embed SVG in HTML. Most of them lack an adequate method of applying CSS, if at all. Some actually *require* inline CSS which makes baby Jesus kittens cry. Some methods eliminate caching behavior because the resources are embedded in the HTML instead of being stored in external files. None of these methods are ideal because they require more work to setup and more resources. TO be clear, we must treat SVGs as DOM objects in order to enjoy the benefits of manipulating them with CSS and javascript. Remember, if you try to use .svg files as images, whether by the <img> tag or configuring it as the background-image via CSS, you cannot style it with CSS. 
+##Whose Kung Fu is the best?
+There are at least six ways to embed SVG in HTML and well-known proponents of each. Most of them lack an adequate method of applying CSS, if at all. One method involves setting the icon as a background image in CSS which means you can't style it and can't use it as a button or link. Some actually *require* inline CSS which makes baby Jesus kittens cry. Other methods eliminate caching behavior because the resources are embedded in the HTML instead of being stored in external files. None of these methods are ideal because they require more work to setup and more resources to maintain. What becomes clear after reviewing all these techniques is that we must treat SVGs as DOM objects in order to manipulate them with CSS and javascript. Remember, if you try to use .svg files as images, whether by using it as a background-image via CSS, or via the <img>, <object>, or <embed> tag you cannot style it with CSS. 
 
 ##The Secret Sauce
-The secret is embedding <svg> tags inline, directly in the HTML with a <use> tag nested inside. This format allows us to select the desired icon sprite from the main spritemap.svg using unique IDs. To add external CSS suport you simply add an "icon-xxxxx" class on each <svg>. 
+The secret is embedding <svg> tags inline, directly in the HTML with a <use> tag nested inside. This format allows us to select the desired icon sprite from the main spritemap.svg using unique IDs. To add external CSS suport you simply add an "icon-xxxxx" class on each <svg>. You are free to build your styles in SASS if you wish.
 
 ##Efficiency
 Our ultimate goal is to reduce http requests and eliminate inefficiencies in our workflow. By moving all icons to an external file, we retain traditional caching abilities, while gaining the ability to style each instance of an icon seperately. Just what you wanted for Christmas, right? In some cases we may want to make several spritemaps, but the benefits remain the same. Whereas with icon fonts and PNG fallback methods, we serve and maintain possibly hundreds of asset files, with this method we serve a single maintainable, and easily cacheable XML file. Also, we no longer have to rely on a 3rd-party solution to compile our icons into various formats. **Any developer** can add any icon to a project that employs this technique without even leaving their text editor!
@@ -54,14 +54,14 @@ This is intended to be a quick and dirty demo for adding a single icon to a proj
 5. PASTE the path you copied earlier and give it a unique id="" (leave the view-box alone and ignore the <g> tags, we are substituting <symbol> for reasons outlined here - http://css-tricks.com/svg-symbol-good-choice-icons/)
 6. paste this block in the html where you want to use the icon:
 
-  <svg class="icon-IDNAME"> 
-    <use xlink:href="assets/icons/spritemap.svg#IDNAME"></use>
+  <svg class="icon-xxxxxx"> 
+    <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
   </svg>
  
- (where 'IDNAME' matches the unique id of each symbol)
+ (where 'xxxxxx' matches the unique id of each symbol)
 
 7. The id is only for selecting the icon from the svg spritesheet with the <use> tag in the HTML
-8. The "icon-IDNAME" class is for applying custom styling to a specific icon
+8. The "icon-xxxxxx" class is for applying custom styling to a specific icon, or single instance of an icon
 
 ## The Future
 
