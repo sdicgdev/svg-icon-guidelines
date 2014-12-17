@@ -45,7 +45,7 @@ This is intended to be a quick and dirty guide to adding a single icon to your p
 ##Adding a New Icon to the Project: 
 1. Add new .svg to **assets/icons** folder (**ALWAYS** keep a pristine version in the project)
 2. open new icon .svg in text editor and COPY the main shape (path d="..." - ignore empty paths)
-3. Open 'pg-spritemap.svg' file in text editor 
+3. Open 'spritemap.svg' file in text editor 
 4. Duplicate the empty <symbol> element at the bottom of the <svg> block
 5. PASTE the path you copied earlier and give it a unique id="" (leave the view-box alone and ignore the <g> tags, we are substituting <symbol> for reasons outlined here - http://css-tricks.com/svg-symbol-good-choice-icons/)
 6. paste this block in the html where you want to use the icon:
@@ -67,10 +67,5 @@ This is intended to be a quick and dirty guide to adding a single icon to your p
 * each icon is summoned with an <svg> tag containing a <use> tag that points to the id of the desired icon
 * "icon-xxxxx" classes are for styling individual icons. they live in sass/_pg-icons.scss, and must be included on the <svg> tag or they won't work.
 * SVG has special CSS attributes, filters and behaviors. 
-*To change an icon's color use "fill" instead of "color"
-*Use "stroke: " to outline the whole symbol.
-----------------------
-##todo:
-* add sample index.html
-* add sample icons 
-* add sample css
+* To change an icon's color use "fill" instead of "color"
+* Use "stroke: " to outline the whole symbol.
