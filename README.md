@@ -1,16 +1,16 @@
 *this is a work in progress*
 
-# Making the switch to SVG
-The writing has been on the wall for a couple of years at this point: SVG is taking over the web. They solve a lot of problems but require learning some new techniques. The #1 reason we should switch to SVG icons is so we can avoid any browser-specific font-rendering issues without having to apply a bunch of hacky anti-aliasing and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay! 
+# Making the Switch to SVG
+The writing has been on the wall for a couple of years by now: SVG is taking over the web. The SVG format solves a lot of problems, but does require learning some new techniques. The #1 reason we should switch to SVG icons is so we can avoid any browser-specific font-rendering issues without having to apply a bunch of hacky anti-aliasing and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay! The biggest stumbling block has always been spotty support in browsers, but those days are almost behind us.
 
 ##Not your Fathers' SVG
 If you're unaware already, SVG is a vector graphic format that supports multiple colors, gradients and can be styled through a bunch of CSS properties and SVG filter effects. With modern techniques you can make them do anything. You can stack them to make more complex icons and artwork. They can also be animated and controlled through javascript. But before you get too excited, all these powers can be yours if you read the primer below and follow some simple directions.
 
-##Using SVG Icons the Smart Way
-There are several established and popular methods for using SVG icons, however they all have shortcomings that need to be addressed if we want to use them. Most of them bloat the project with duplicate PNG fallbacks and other methods intended to support ancient browsers. Truth be told, there is a lot of old and conflicting information out there on the interwebs about the best way to use SVG icons. I have sifted through all the muck and absorbed as much SVG knowledge as I can handle. After a mighty quest, I have returned with a new spell! 
+##Using SVG Icons the Smart Way &trade;
+There are several established and popular methods for using SVG icons, however they all have shortcomings that need to be addressed if we want to use them. Most of them bloat the project by generating .PNG fallback files and employ other methods intended to patch-in support for ancient browsers. Truth be told, there is a lot of old and conflicting information out there on the interwebs about the best way to use SVG icons. I have sifted through all the muck and absorbed as much SVG knowledge as I can handle. After a mighty quest, I have returned with a new spell! 
 
 ##So many methods, which one is the best?
-There are at least six ways to embed SVG in HTML. Most of them lack an adequate method of applying CSS, if at all. Some actually *require* inline CSS which makes baby Jesus kittens cry. Some methods eliminate caching behavior because the resources are embedded in the HTML instead of being stored in external files. 
+There are at least six ways to embed SVG in HTML. Most of them lack an adequate method of applying CSS, if at all. Some actually *require* inline CSS which makes baby Jesus kittens cry. Some methods eliminate caching behavior because the resources are embedded in the HTML instead of being stored in external files. Remember, if you try to use .SVG files as images, whether by the <img> tag or configuring it as the background-image via CSS, you cannot style it with CSS. We must treat SVGs as DOM objects in order to enjoy the benefits of manipulating them with CSS and javascript.
 
 ##The Secret Sauce
 The secret is inline <svg> directly in the HTML with a <use> tag nested inside that which allows us to select the desired icon sprite from the main spritemap.svg using unique IDs given to each icon. Put an "icon-xxxxx" class on each <svg> for styling with external CSS! Still with me? Good.
