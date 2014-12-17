@@ -48,18 +48,39 @@
     }
     
     .icon-check {
-      fill: red;
+      fill: green;
     }
     
     .icon-add-circle {
-      fill: blue;
-      stroke: red;
+      fill: white;
+      stroke: black;
     }
     
     .icon-warning {
-      fill: green;
+      fill: red;
     }
-   
+
+    .icon-warning2 {
+
+    }
+
+    .icon-warning3 {
+      fill: orangered;
+    }
+
+    .icon-warning4 {
+      fill: slategray;
+    }
+
+
+    ol {
+      line-height: 40px;
+    }
+
+    ol li svg {
+      position: relative;
+      top: 4px;
+    }
   </style>
 
 </head>
@@ -90,11 +111,30 @@
 
     <div class="playground">
       <h2>Playground</h2>
-      <p>Try to add a couple of new icons to this box. After you have successfully added some icons, try to change their size and color. How would you add a 1px stroke?</p>
+      <ol>
+        <li>Add the shopping cart icon here: </li>
+        <li>Add the settings icon here: </li>
+        <li>Change the size of this icon to 100px: 
+          <svg class="icon-warning2">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+        </li>
+        <li>Change the color of this icon to blue: 
+          <svg class="icon-warning3">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+        </li>
+        <li>Apply a 2px stroke to this icon: 
+          <svg class="icon-warning4">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+        </li>
+      </ol>
+      <p>After you have successfully added some icons, try to change their size and color. How would you add a 1px stroke?</p>
       
       <!-- change the class and id to the icon you want -->
-      <svg class="icon-XXXXXXXXX">
-        <use xlink:href="assets/icons/spritemap.svg#XXXXXXXXXX"></use>
+      <svg class="icon-xxxxxx">
+        <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
       </svg>
       
     </div>
