@@ -10,9 +10,14 @@
   <style>
     body{
       text-align: center;
+      font-family: Helvetica, Arial, sans-serif; 
     }
     h1,h2 {
       margin: 0;
+    }
+    h3 {
+      text-align: center;
+      margin-top: 1em;
     }
     #content {
       width: 75vw;
@@ -34,10 +39,13 @@
       border: 5px solid green;
     }
     svg {
-      max-height: 32px;
-      max-width: 32px;
+      max-height: 48px;
+      max-width: 48px;
       padding: 0 !important;
       margin: 0 !important;
+    }
+    svg:hover {
+      fill: orangered;
     }
     [class*="icon-"] {
       height: 100%;
@@ -65,22 +73,16 @@
     }
 
     .icon-warning3 {
-      fill: orangered;
+      fill: skyblue;
     }
 
     .icon-warning4 {
-      fill: slategray;
+      fill: purple;
+    }
+    .icon-xxxxxx {
+      background: #ddd;
     }
 
-
-    ol {
-      line-height: 40px;
-    }
-
-    ol li svg {
-      position: relative;
-      top: 4px;
-    }
   </style>
 
 </head>
@@ -94,7 +96,7 @@
    
     <div class="demo">
       <h2>Demo</h2>
-      <p>Below are 4 sample icons. The project contains several more sample icons in <b>assets/icons/</b> you can experiment with.</p>
+      <p>Below are 4 sample icons. Familiarize yourself with the underlying code. The project contains more sample icons in <b>assets/icons/</b> you can experiment with.</p>
       <svg class="icon-bug-report">
         <use xlink:href="assets/icons/spritemap.svg#bug-report"></use>
       </svg> 
@@ -112,34 +114,113 @@
     <div class="playground">
       <h2>Playground</h2>
       <ol>
-        <li>Add the shopping cart icon here: </li>
-        <li>Add the settings icon here: </li>
-        <li>Change the size of this icon to 100px: 
+        <li>
+          <p>Add the shopping cart icon here: </p> 
+          <svg class="icon-">
+            <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
+          </svg>
+        </li>
+        <li>
+          <p>Add the settings icon here: </p>
+          <svg class="icon-">
+            <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
+          </svg>
+        </li>
+        <li>
+          <p>Change the size of this icon to 100px: </p> 
           <svg class="icon-warning2">
             <use xlink:href="assets/icons/spritemap.svg#warning"></use>
           </svg>    
         </li>
-        <li>Change the color of this icon to blue: 
+        <li><p>Change the color of this icon to brown: </p>
           <svg class="icon-warning3">
             <use xlink:href="assets/icons/spritemap.svg#warning"></use>
           </svg>    
         </li>
-        <li>Apply a 2px stroke to this icon: 
+        <li><p>Apply a 2px stroke to this icon: </p>
           <svg class="icon-warning4">
             <use xlink:href="assets/icons/spritemap.svg#warning"></use>
           </svg>    
         </li>
+        <li><p>Notice that this block takes up space in the browser despite the icon not being fully defined. This is because the svg element still has a default height of 32px.</p>
+          <svg class="icon-xxxxxx">
+            <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
+          </svg>
+        </li>
       </ol>
-      <p>After you have successfully added some icons, try to change their size and color. How would you add a 1px stroke?</p>
+      <!-- <table>
+        <tr>
+          <td>
+            Add the shopping cart icon here:
+          </td>
+          <td>
+            <svg class="icon-warning2">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+          </td>
+        </tr><tr>
+          <td>
+            Add the shopping cart icon here:
+          </td>
+          <td>
+            <svg class="icon-warning2">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+          </td>
+        </tr><tr>
+          <td>
+            Add the shopping cart icon here:
+          </td>
+          <td>
+            <svg class="icon-warning2">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+          </td>
+        </tr><tr>
+          <td>
+            Add the shopping cart icon here:
+          </td>
+          <td>
+            <svg class="icon-warning2">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+          </td>
+        </tr><tr>
+          <td>
+            Add the shopping cart icon here:
+          </td>
+          <td>
+            <svg class="icon-warning2">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+          </td>
+        </tr><tr>
+          <td>
+            Add the shopping cart icon here:
+          </td>
+          <td>
+            <svg class="icon-warning2">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+          </td>
+        </tr><tr>
+          <td>
+            Add the shopping cart icon here:
+          </td>
+          <td>
+            <svg class="icon-warning2">
+            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
+          </svg>    
+          </td>
+        </tr>
+      </table>  -->     
+      <!--Example: Notice that this block takes up space in the browser despite the icon not being fully defined, the <svg> element still has a height of 32px. -->
       
-      <!-- change the class and id to the icon you want -->
-      <svg class="icon-xxxxxx">
-        <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
-      </svg>
       
     </div>
-  </div>
-  
+    <h3>Easy enough right? Go forth and SVGify!</h3>
+  </div> 
+  <!--/content  -->
   <script src="assets/js/svg4everybody.min.js"></script>
 
 </body>
