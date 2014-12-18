@@ -58,7 +58,8 @@ This quick and dirty demo will teach you how to add a single icon to a project. 
 ```
   <svg class="icon-xxxxxx"> 
     <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
-  </svg> (where ```xxxxxx``` matches the unique id of each symbol)```
+  </svg> (where ```xxxxxx``` matches the unique id of each symbol)
+```
 
 ## The Future
 The next step is to automate as much of this as possible into a grunt or gulp task that will read a folder of icons, and build a properly formatted spritemap automatically using the icons filename. Unfortunately, current solutions do not account for the specific format we are using for this technique and will need to be modified. Once we get that going, this process will be even more efficient.
