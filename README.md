@@ -1,6 +1,6 @@
 *this is a work in progress*
 
-# Making the Switch to SVG
+# A Modern Guide To Using SVG Icons
 The writing has been on the wall for a couple of years by now: SVG is taking over the web. The SVG format solves a lot of problems, but does require learning some new techniques. The biggest stumbling block has always been spotty support in browsers, but those days are almost behind us. The #1 reason we should switch to SVG icons is to avoid browser-specific font-rendering issues without having to apply a bunch of hacky anti-aliasing and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay! 
 
 ##Not your Fathers' SVG
@@ -33,7 +33,7 @@ Well supposedly Internet Explorer now supports inline SVG...but you'll be *shock
 6. Eliminates font-rendering quirks including character mapping issues
 7. Tiny javascript polyfill fixes Internet Explorer fails
 8. Icons zoom with the rest of the content
-9. small file sizes that compress well
+9. Small file sizes that compress well
 
 ##Cons
 1. Doesn't work in old browsers that we don't really care about.
