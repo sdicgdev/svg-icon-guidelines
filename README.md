@@ -50,33 +50,34 @@ This quick and dirty demo will teach you how to add a single icon to a project. 
 ##Adding a New Icon to the Project: 
 1. Add new ```.svg``` to **assets/icons** folder (**ALWAYS** keep a pristine version in the project)
 2. Open new icon ```.svg``` in text editor and COPY the main shape (path d="..." - ignore empty paths)
-3. Open ```'spritemap.svg'``` file in text editor 
+3. Open ```'spritemap.svg'``` file in a text editor 
 4. Duplicate the last ```<symbol>``` element at the bottom of the ```<svg>``` block
-5. PASTE the path you copied earlier and give it a unique id="" (leave the view-box alone and ignore the <g> tags, we are substituting <symbol> for reasons outlined here - http://css-tricks.com/svg-symbol-good-choice-icons/)
-6. paste this block in the html where you want to use the icon:
+5. PASTE the path you copied earlier inside that symbol block, and give it a unique id=""
+6. PASTE this block in the html where you want to use the icon:
 ```
   <svg class="icon-xxxxxx"> 
     <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
   </svg>
 ``` 
 (where ```xxxxxx``` matches the unique id of each symbol)
+
 7. The id is only for selecting the icon from the svg spritesheet with the ```<use>``` tag
 8. The ```icon-xxxxxx``` class is for applying custom styling to a specific icon, or single instance of an icon
 
 ## The Future
-The next step is to condense this process into a grunt or gulp task that will read a folder of icons, and build a properly formatted spritemap automatically. Unfortunately, current solutions do not account for the requisite format we need. That bit will make this even more efficient.
+The next step is to automate as much of this as possible into a grunt or gulp task that will read a folder of icons, and build a properly formatted spritemap automatically using the icons filename. Unfortunately, current solutions do not account for the format we are using for this technique. Once we get that piece complete, this process will be even more efficient.
 
 ##Notes
-* svg4everybody.js is a polyfill for using inline SVG in ie8-11 - https://github.com/jonathantneal/svg4everybody 
-* source icons - https://github.com/google/material-design-icons or http://icomoon.io
-* 48x48 default size, but can be any size
-* each icon is contained in a ```<symbol>``` tag, which together make up the spritemap
-* each icon is summoned with an <svg> tag containing a <use> tag that points to the id of the desired icon
+* *svg4everybody.js* is a polyfill for using inline SVG in ie8-11 - https://github.com/jonathantneal/svg4everybody
+* Each icon is contained in a ```<symbol>``` tag, which together make up the spritemap
+* Why we use the ```<symbol>``` tag - http://css-tricks.com/svg-symbol-good-choice-icons/ 
+* Source icons - https://github.com/google/material-design-icons or http://icomoon.io
+* 48x48 default size, but they can be rendered any size
+* Each icon is summoned with an ```<svg>``` tag containing a ```<use>``` tag that points to the id of the desired icon
 * ```icon-xxxxx``` classes are for styling individual icons and must be included on the ```<svg>``` tag or they won't work.
 * SVG responds to a lot of standard CSS attributes, however there is a whole other world of SVG-specific CSS out there to explore - http://tutorials.jenkov.com/svg/svg-and-css.html
 * Use "fill" instead of "color" to change an icon's color 
-* Use "stroke: " to outline the whole symbol
-* Use "stroke-width: " to control the width of the stroke
+* Use "stroke: " and "stroke-width: " to outline the icon
 * Have fun!
 
 For help, please contact jared@sdicg.com.
