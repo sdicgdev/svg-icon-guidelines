@@ -82,6 +82,11 @@
     .icon-xxxxxx {
       background: #ddd;
     }
+    .source{
+      font-size: 12px;
+      font-style: italic;
+      text-align: center;
+    }
 
   </style>
 
@@ -89,10 +94,11 @@
 
 <body>
   <div id="content">
+    <p class="source">Source: <a href="https://github.com/sdicgdev/svg-icon-guidelines" target="_blank">https://github.com/sdicgdev/svg-icon-guidelines</a></p>
     <div class="demo">
       <h1>Inline SVG Icon Demo</h1>
       <p>Below are examples of inline SVG with &lt;use> linking to an external resource. They even work in IE 9, 10, and 11 because of <a href="https://github.com/jonathantneal/svg4everybody">SVG for Everybody</a>. Familiarize yourself with the underlying code and don't be afraid to experiment. Icons live in <b>assets/icons/</b> and all CSS lives in the &lt;head>.</p>
-      <p><i>Source: https://github.com/sdicgdev/svg-icon-guidelines</i></p>
+
       <svg class="icon-bug-report">
         <use xlink:href="assets/icons/spritemap.svg#bug-report"></use>
       </svg> 

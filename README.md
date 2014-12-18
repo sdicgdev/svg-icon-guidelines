@@ -78,4 +78,4 @@ This quick and dirty demo will teach you how to add a single icon to a project. 
 * Use "stroke: " and "stroke-width: " to outline the icon
 * Have fun!
 
-For help, please contact jared@sdicg.com.
+Author: Jared Taylor - jared@sdicg.com.
