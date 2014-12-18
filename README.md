@@ -25,7 +25,7 @@ The techniques outlined in this document have been tested and verified working o
 Well supposedly Internet Explorer now supports inline SVG...but you'll be *shocked* to learn that it doesn't support everything. In most cases, for modern browsers there is no longer a need to provide PNG fallback images. We can use a tiny javascript polyfill called **svg4everybody.js** that adds support for inline SVG with ```<use>``` tags. Soon, even that won't be necessary. 
 
 ##Pros
-1. You can control style with external CSS (http://css-tricks.com/using-svg/)
+1. You can control style with external CSS
 2. Reduce http requests
 3. Don't have to maintain and serve multiple font files for specific browsers
 4. Any dev can easily add a new icon to the project at any time
@@ -65,6 +65,7 @@ This quick and dirty demo will teach you how to add a single icon to a project. 
 The next step is to automate as much of this as possible into a grunt or gulp task that will read a folder of icons, and build a properly formatted spritemap automatically using the icons filename. Unfortunately, current solutions do not account for the specific format we are using for this technique and will need to be modified. Once we get that going, this process will be even more efficient.
 
 ##Notes
+* Decent overview of SVG techniques - http://css-tricks.com/using-svg/
 * *svg4everybody.js* is a polyfill for using inline SVG in ie8-11 - https://github.com/jonathantneal/svg4everybody
 * Each icon is contained in a ```<symbol>``` tag, which together make up the spritemap
 * Why we use the ```<symbol>``` tag - http://css-tricks.com/svg-symbol-good-choice-icons/ 
