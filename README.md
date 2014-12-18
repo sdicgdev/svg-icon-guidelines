@@ -45,7 +45,7 @@ Using SVGs as outlined here will greatly reduce http requests and completely eli
 
 #The Demo
 
-This quick and dirty demo will teach you how to add a single icon to a project. After you have cloned this project locally, you can open up the ```index.html``` in your editor and complete the demo tasks using the process outlined below. Essentially, you copy an icon to the project, copy its path into the spritemap, then place a correctly formatted block of text in the markup. Hit me up on chat or email if you have any questions or to complain about my awful documentation skills. :)
+This quick and dirty demo will teach you how to add a single icon to a project. After you have cloned this project locally, you can open up the ```index.html``` in your editor and complete the demo tasks using the process outlined below. Essentially, you copy an icon to the project, copy its main ```<path>``` into the spritemap, then place a correctly formatted block in the HTML where the icon goes. Hit me up on chat or email if you have any questions or to complain about my awful documentation skills. :)
 
 ##Adding a New Icon to the Project: 
 1. Add new ```.svg``` to **assets/icons/source** folder (**ALWAYS** keep a pristine version in the project)
