@@ -57,10 +57,8 @@ This quick and dirty demo will teach you how to add a single icon to a project. 
 ```
   <svg class="icon-xxxxxx"> 
     <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
-  </svg>
-``` 
-(where ```xxxxxx``` matches the unique id of each symbol)
-
+  </svg> (where ```xxxxxx``` matches the unique id of each symbol)
+```
 7. The id is only for selecting the icon from the svg spritesheet with the ```<use>``` tag
 8. The ```icon-xxxxxx``` class is for applying custom styling to a specific icon, or single instance of an icon
 
