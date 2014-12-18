@@ -45,13 +45,13 @@ Using SVGs as outlined here will greatly reduce http requests and completely eli
 
 #The Demo
 
-This is intended to be a quick and dirty demo for adding a single icon to a project. After you have cloned this project locally, you can open up the index.html in your editor and complete the demo tasks using the process outlined below. Essentially, you copy an icon to the project, copy its path into the spritemap, then place a correctly formatted block of text in the markup. Hit me up on chat or email if you have any questions or to complain about my awful documentation skills. :)
+This quick and dirty demo will teach you how to add a single icon to a project. After you have cloned this project locally, you can open up the ```index.html``` in your editor and complete the demo tasks using the process outlined below. Essentially, you copy an icon to the project, copy its path into the spritemap, then place a correctly formatted block of text in the markup. Hit me up on chat or email if you have any questions or to complain about my awful documentation skills. :)
 
 ##Adding a New Icon to the Project: 
 1. Add new ```.svg``` to **assets/icons** folder (**ALWAYS** keep a pristine version in the project)
-2. open new icon ```.svg``` in text editor and COPY the main shape (path d="..." - ignore empty paths)
+2. Open new icon ```.svg``` in text editor and COPY the main shape (path d="..." - ignore empty paths)
 3. Open ```'spritemap.svg'``` file in text editor 
-4. Duplicate the empty ```<symbol>``` element at the bottom of the ```<svg>``` block
+4. Duplicate the last ```<symbol>``` element at the bottom of the ```<svg>``` block
 5. PASTE the path you copied earlier and give it a unique id="" (leave the view-box alone and ignore the <g> tags, we are substituting <symbol> for reasons outlined here - http://css-tricks.com/svg-symbol-good-choice-icons/)
 6. paste this block in the html where you want to use the icon:
 ```
@@ -59,8 +59,7 @@ This is intended to be a quick and dirty demo for adding a single icon to a proj
     <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
   </svg>
 ``` 
- (where ```xxxxxx``` matches the unique id of each symbol)
-
+(where ```xxxxxx``` matches the unique id of each symbol)
 7. The id is only for selecting the icon from the svg spritesheet with the ```<use>``` tag
 8. The ```icon-xxxxxx``` class is for applying custom styling to a specific icon, or single instance of an icon
 
