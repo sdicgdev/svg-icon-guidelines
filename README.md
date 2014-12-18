@@ -1,7 +1,7 @@
 *this is a work in progress*
 
 # A Modern Guide To Using SVG Icons
-The writing has been on the wall for a couple of years by now: SVG is taking over the web. The SVG format solves a lot of problems, but does require learning some new techniques. The biggest stumbling block has always been spotty support in browsers, but those days are almost behind us. The #1 reason we should switch to SVG icons is to avoid browser-specific font-rendering issues without having to apply a bunch of hacky anti-aliasing and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay! 
+The writing has been on the wall for a couple of years by now: SVG is taking over the web. The SVG format solves a lot of problems, but does require learning some new techniques. The biggest stumbling block has always been spotty support from browsers, but those days are almost behind us. The #1 reason we should switch to SVG icons is to avoid browser-specific font-rendering issues without having to apply a bunch of hacky anti-aliasing and normalizing nonsense. SVG is not subject to any font-related hacks or effects. We don't have to worry about weird character mapping issues either. Yay! 
 
 ##Not your Fathers' SVG
 For the uninitiated, SVG is a vector graphic format that supports multiple colors, gradients and can be styled through a bunch of CSS properties and SVG filter effects. The format has been around since the early 2000s, but has only recently seen widespread support in browsers and authoring applications. With modern techniques you can make SVGs do anything. You can stack them to make more complex icons and artwork. They can also be animated and controlled through javascript. But before you get too excited, all these powers can be yours...IF you read the primer below AND follow some simple directions.
@@ -24,21 +24,8 @@ The techniques outlined in this document have been tested and verified working o
 ##But What about Internet Explorer, You Say?
 Well supposedly Internet Explorer now supports inline SVG...but you'll be *shocked* to learn that it doesn't support everything. In most cases, for modern browsers there is no longer a need to provide PNG fallback images. We can use a tiny javascript polyfill called **svg4everybody.js** that adds support for inline SVG with ```<use>``` tags. Soon, even that won't be necessary. 
 
-##Pros
-1. You can control style with external CSS
-2. Reduce http requests
-3. Don't have to maintain and serve multiple font files for specific browsers
-4. Any dev can easily add a new icon to the project at any time
-5. Fewer files to maintain and no need to deal with .png fallback resources that just bloat the project
-6. Eliminates font-rendering quirks including character mapping issues
-7. Tiny javascript polyfill fixes Internet Explorer fails
-8. Icons zoom with the rest of the content
-9. Small file sizes that compress well
-
-##Cons
-1. Doesn't work in old browsers that we don't really care about.
-2. There may be caching issues during development. If you are having trouble seeing icons in the browser, make sure caching is turned off.
-3. Can't use font-related css attributes (this is also kind of a pro, but i needed more cons)
+## The Future
+The next step is to automate as much of this as possible into a grunt or gulp task that will read a folder of icons, and build a properly formatted spritemap automatically using the icons filename. Unfortunately, current solutions do not account for the specific format we are using for this technique and will need to be modified. Once we get that going, this process will be even more efficient.
 
 ##TL;DR
 Using SVGs as outlined here will greatly reduce http requests and completely eliminate font-rendering quirks. It also keeps our project clean by eliminating redundant files, and ultimately streamlines our workflow. Now any dev can copy an SVG icon path into the spritemap and start using it immediately with full CSS support! 
@@ -60,9 +47,21 @@ This quick and dirty demo will teach you how to add a single icon to a project. 
     <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
   </svg> (where ```xxxxxx``` matches the unique id of each symbol)
 ```
+##Pros
+1. You can control style with external CSS
+2. Reduce http requests
+3. Don't have to maintain and serve multiple font files for specific browsers
+4. Any dev can easily add a new icon to the project at any time
+5. Fewer files to maintain and no need to deal with .png fallback resources that just bloat the project
+6. Eliminates font-rendering quirks including character mapping issues
+7. Tiny javascript polyfill fixes Internet Explorer fails
+8. Icons zoom with the rest of the content
+9. Small file sizes that compress well
 
-## The Future
-The next step is to automate as much of this as possible into a grunt or gulp task that will read a folder of icons, and build a properly formatted spritemap automatically using the icons filename. Unfortunately, current solutions do not account for the specific format we are using for this technique and will need to be modified. Once we get that going, this process will be even more efficient.
+##Cons
+1. Doesn't work in old browsers that we don't really care about.
+2. There may be caching issues during development. If you are having trouble seeing icons in the browser, make sure caching is turned off.
+3. Can't use font-related css attributes (this is also kind of a pro, but i needed more cons)
 
 ##Notes
 * Decent overview of SVG techniques - http://css-tricks.com/using-svg/
