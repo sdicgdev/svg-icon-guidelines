@@ -54,11 +54,11 @@ This is intended to be a quick and dirty demo for adding a single icon to a proj
 4. Duplicate the empty ```<symbol>``` element at the bottom of the ```<svg>``` block
 5. PASTE the path you copied earlier and give it a unique id="" (leave the view-box alone and ignore the <g> tags, we are substituting <symbol> for reasons outlined here - http://css-tricks.com/svg-symbol-good-choice-icons/)
 6. paste this block in the html where you want to use the icon:
-
+```
     <svg class="icon-xxxxxx"> 
       <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
     </svg>
- 
+``` 
  (where ```xxxxxx``` matches the unique id of each symbol)
 
 7. The id is only for selecting the icon from the svg spritesheet with the ```<use>``` tag
