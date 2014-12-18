@@ -32,7 +32,7 @@ Well supposedly Internet Explorer now supports inline SVG...but you'll be *shock
 5. Fewer files to maintain and no need to deal with .png fallback resources that just bloat the project
 6. Eliminates font-rendering quirks including character mapping issues
 7. Tiny javascript polyfill fixes Internet Explorer fails
-8. Icons zoom with the rest of the content.
+8. Icons zoom with the rest of the content
 9. small file sizes that compress well
 
 ##Cons
@@ -52,9 +52,9 @@ This quick and dirty demo will teach you how to add a single icon to a project. 
 2. Open new icon ```.svg``` in text editor and COPY the main shape (path d="..." - ignore empty paths)
 3. Open ```'spritemap.svg'``` file in a text editor 
 4. Duplicate the last ```<symbol>``` element at the bottom of the ```<svg>``` block
-5. PASTE the path you copied earlier inside that symbol block, and give it a unique id=""
-7. Give the ```<symbol>``` a unique descriptive id
-6. PASTE this block in the html where you want to use the icon:
+5. PASTE the path from step 2 inside this ```<symbol>```
+7. Give the ```<symbol>``` a descriptive, unique id
+6. PASTE the following block into the HTML where the icon should appear
 ```
   <svg class="icon-xxxxxx"> 
     <use xlink:href="assets/icons/spritemap.svg#xxxxxx"></use>
