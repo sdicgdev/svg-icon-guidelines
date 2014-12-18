@@ -25,7 +25,7 @@ The techniques outlined in this document have been tested and verified working o
 Well supposedly Internet Explorer now supports inline SVG...but you'll be *shocked* to learn that it doesn't support everything. In most cases, for modern browsers there is no longer a need to provide PNG fallback images. We can use a tiny javascript polyfill called **svg4everybody.js** that adds support for inline SVG with ```<use>``` tags. Soon, even that won't be necessary. 
 
 ## The Future
-The next step is to automate as much of this as possible into a grunt or gulp task that will read a folder of icons, and build a properly formatted spritemap automatically using the icons filename. Unfortunately, current solutions do not account for the specific format we are using for this technique and will need to be modified. Once we get that going, this process will be even more efficient.
+The next step is to automate as much of this as possible into a grunt or gulp task that will read a folder of icons, and build a properly formatted spritemap automatically using the filenames. Unfortunately, current solutions do not account for the specific format we are using for this technique and will need to be modified. Once we get that going, this process will be even more efficient.
 
 ##TL;DR
 Using SVGs as outlined here will greatly reduce http requests and completely eliminate font-rendering quirks. It also keeps our project clean by eliminating redundant files, and ultimately streamlines our workflow. Now any dev can copy an SVG icon path into the spritemap and start using it immediately with full CSS support! 

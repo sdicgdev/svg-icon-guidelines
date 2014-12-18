@@ -9,8 +9,10 @@
 
   <style>
     body{
+      background: #ddd;
       text-align: center;
-      font-family: Helvetica, Arial, sans-serif; 
+      font-family: Helvetica, Arial, sans-serif;
+      line-height: 1.5em; 
     }
     h1,h2 {
       margin: 0;
@@ -24,18 +26,16 @@
       margin: 0 auto;
       text-align: left;
     }
-    .intro{
-      padding: 1em;
-      margin-bottom: 1em;
-    }
+
     .demo {
       padding: 1em;
       margin: 1em 0;
-      background: #e5e5e5;
+      background: #fff;
       border: 5px solid #666;
     }
     .playground {
       padding: 1em;
+      background: #fff;
       border: 5px solid green;
     }
     svg {
@@ -89,14 +89,10 @@
 
 <body>
   <div id="content">
-    <div class="intro">
-      <h1>Inline SVG Icon Demo</h1>
-      <p>Below are examples of inline SVG with &lt;use> linking to an external resource. They even work in IE 9, 10, and 11 because of <a href="https://github.com/jonathantneal/svg4everybody">SVG for Everybody</a>.</p>
-    </div>
-   
     <div class="demo">
-      <h2>Demo</h2>
-      <p>Below are 4 sample icons. Familiarize yourself with the underlying code. The project contains more sample icons in <b>assets/icons/</b> you can experiment with.</p>
+      <h1>Inline SVG Icon Demo</h1>
+      <p>Below are examples of inline SVG with &lt;use> linking to an external resource. They even work in IE 9, 10, and 11 because of <a href="https://github.com/jonathantneal/svg4everybody">SVG for Everybody</a>. Familiarize yourself with the underlying code and don't be afraid to experiment. Icons live in <b>assets/icons/</b> and all CSS lives in the &lt;head>.</p>
+      <i>Source: https://github.com/sdicgdev/svg-icon-guidelines</i>
       <svg class="icon-bug-report">
         <use xlink:href="assets/icons/spritemap.svg#bug-report"></use>
       </svg> 
@@ -148,81 +144,10 @@
           </svg>
         </li>
       </ol>
-      <!-- <table>
-        <tr>
-          <td>
-            Add the shopping cart icon here:
-          </td>
-          <td>
-            <svg class="icon-warning2">
-            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
-          </svg>    
-          </td>
-        </tr><tr>
-          <td>
-            Add the shopping cart icon here:
-          </td>
-          <td>
-            <svg class="icon-warning2">
-            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
-          </svg>    
-          </td>
-        </tr><tr>
-          <td>
-            Add the shopping cart icon here:
-          </td>
-          <td>
-            <svg class="icon-warning2">
-            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
-          </svg>    
-          </td>
-        </tr><tr>
-          <td>
-            Add the shopping cart icon here:
-          </td>
-          <td>
-            <svg class="icon-warning2">
-            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
-          </svg>    
-          </td>
-        </tr><tr>
-          <td>
-            Add the shopping cart icon here:
-          </td>
-          <td>
-            <svg class="icon-warning2">
-            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
-          </svg>    
-          </td>
-        </tr><tr>
-          <td>
-            Add the shopping cart icon here:
-          </td>
-          <td>
-            <svg class="icon-warning2">
-            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
-          </svg>    
-          </td>
-        </tr><tr>
-          <td>
-            Add the shopping cart icon here:
-          </td>
-          <td>
-            <svg class="icon-warning2">
-            <use xlink:href="assets/icons/spritemap.svg#warning"></use>
-          </svg>    
-          </td>
-        </tr>
-      </table>  -->     
-      <!--Example: Notice that this block takes up space in the browser despite the icon not being fully defined, the <svg> element still has a height of 32px. -->
-      
-      
     </div>
-    <h3>Easy enough right? Go forth and SVGify!</h3>
+    <h3>Easy enough, right? Go forth and SVGify!</h3>
   </div> 
   <!--/content  -->
   <script src="assets/js/svg4everybody.min.js"></script>
-
 </body>
-
 </html>
